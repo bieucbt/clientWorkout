@@ -10,7 +10,7 @@ const Home = () => {
   
   useEffect(() => {
     const fetchWorkout = async () => {
-      const res = await fetch('http://localhost:5000/api/workout')
+      const res = await fetch('https://server-workout.vercel.app/api/workout')
       const json = await res.json()
       if(res.ok){
         dispatch({type: 'SET_WORKOUTS', payload: json})
@@ -21,7 +21,7 @@ const Home = () => {
   },[])
 
   async function handleDelete(id){
-    const res = await fetch('http://localhost:5000/api/workout/'+id, {
+    const res = await fetch('https://server-workout.vercel.app/api/workout/'+id, {
       method: 'DELETE'
     })
     const json = await res.json()
